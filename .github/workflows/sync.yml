@@ -7,7 +7,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: aormsby/Fork-Sync-With-Upstream-action@v3
+      - uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.3
         with:
           upstream_repository: Kianuni/Erosion-CN  
           upstream_branch: main # 上游分支名
