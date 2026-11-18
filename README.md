@@ -5,13 +5,25 @@
   <h1>Erosion-CN</h1>
   <p>基于 <a href="https://github.com/forcequitOS/worse_query">worse_query</a> 的 iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（中英双语 · 防白苹果安全加固版）</p>
   <p>支持 iOS / iPadOS 27.0 – 27.2 / 27.3 beta 1（完整支持）以及 iOS / iPadOS 26.x（部分支持）。</p>
-  <p><strong>简体中文</strong> · <a href="./README_EN.md">English Documentation</a> · <a href="https://github.com/Kianuni/AppleFlow">AppleFlow 配套分流与排雷台</a></p>
-  <a href="https://github.com/Kianuni/Erosion-CN/releases/latest"><img alt="GitHub Releases" src="https://img.shields.io/github/v/release/Kianuni/Erosion-CN?style=flat-square&color=CF7D46&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC"></a>
-  <a href="https://github.com/jailbreakdotparty/Erosion"><img alt="Upstream Repo" src="https://img.shields.io/badge/%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93-jailbreakdotparty%2FErosion-3868DB?style=flat-square"></a>
-  <a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/License-GPLv3-blue?style=flat-square"></a>
+  <p><strong>简体中文</strong> · <a href="./README_EN.md">English Documentation</a> · <a href="https://github.com/Kianuni/AppleFlow">AppleFlow 配套分流与排雷台</a> · <a href="https://github.com/Kianuni/AppleLens">AppleLens 观测与排障台</a></p>
+  <p>
+    <a href="https://github.com/Kianuni/Erosion-CN/releases/latest"><img alt="GitHub Releases" src="https://img.shields.io/github/v/release/Kianuni/Erosion-CN?style=flat-square&color=CF7D46&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC"></a>
+    <a href="https://github.com/Kianuni/Erosion-CN/releases"><img alt="IPA Downloads" src="https://img.shields.io/github/downloads/Kianuni/Erosion-CN/total?style=flat-square&color=10B981&label=IPA%20%E4%B8%8B%E8%BD%BD%E9%87%8F"></a>
+    <a href="https://github.com/Kianuni/Erosion-CN/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/Kianuni/Erosion-CN?style=flat-square&color=F59E0B&label=Stars"></a>
+    <a href="https://altdirect.app/?url=https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json"><img alt="Official AltSource" src="https://img.shields.io/badge/%E5%AE%98%E6%96%B9%E6%BA%90-SideStore%20%2F%20AltStore-0EA5E9?style=flat-square"></a>
+    <a href="https://github.com/bebound/AltGallery"><img alt="AltGallery" src="https://img.shields.io/badge/AltGallery-%E5%B7%B2%E6%94%B6%E5%BD%95-7C3AED?style=flat-square"></a>
+    <a href="https://github.com/jailbreakdotparty/Erosion"><img alt="Upstream Repo" src="https://img.shields.io/badge/%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93-jailbreakdotparty%2FErosion-3868DB?style=flat-square"></a>
+    <a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/License-GPLv3-blue?style=flat-square"></a>
+  </p>
+  <p>
+    <a href="https://trendshift.io/repositories/347713" target="_blank"><img src="https://trendshift.io/api/badge/trendshift/repositories/347713/weekly?language=Swift" alt="Kianuni/Erosion-CN | #2 Swift Repository Of The Week" width="250" height="55"></a>&nbsp;&nbsp;<a href="https://trendshift.io/repositories/347713" target="_blank"><img src="https://trendshift.io/api/badge/trendshift/repositories/347713/daily?language=Swift" alt="Kianuni/Erosion-CN | #2 Swift Repository Of The Day" width="250" height="55"></a>&nbsp;&nbsp;<a href="https://trendshift.io/repositories/347713" target="_blank"><img src="https://trendshift.io/api/badge/trendshift/repositories/347713/daily" alt="Kianuni/Erosion-CN | #18 Repository Of The Day" width="250" height="55"></a>
+  </p>
 </div>
 
 ---
+
+> [!WARNING]
+> **系统版本重要提醒（2026-11-17）**：苹果已于 **`iOS / iPadOS 27.3 beta 2`（Build `24C5049d`）** 正式封堵 `worse_query` 沙盒漏洞——升级后将无法读写 `MobileGestalt` 且已生效的修改会被系统重置。**当前最高仅支持至 `27.3 beta 1`**，强烈建议停留在 **`iOS 27.2.1`**（功能最完整）并关闭系统自动更新。
 
 ## 项目简介
 
@@ -24,9 +36,18 @@
 - **原厂双备份 + 一键恢复**：沙盒与系统金库双重 `SHA-256` 备份，卸载重装不丢，可一键还原原机出厂参数。
 - **国行 Apple 智能解锁**：完整美版 `LL + LL/A` / 仅改 `LL` 双模式，四要素体检与一键配齐修复，真机生效核验探针，`SiriHub`、`Audio Intelligence` 等坑位自动防呆。
 - **国行底层限制解除**：FaceTime 音频、境外 eSIM、「无线局域网」显示为「Wi-Fi」。
-- **实用工具**：应用存档备份、缓存清理、跨容器文件浏览、语音备忘录无损导出、电池与崩溃诊断，以及 Surge / Stash 分流规则一键导出。
+- **实用工具**：APFS `clonefile()` 零空间应用暂存舱（五重防呆）、Wi-Fi 局域网 HTTP 文件传输、文件夹深度搜索与最大 100 文件分析、POSIX `chmod` 权限修改、POSIX 极速缓存清理、跨容器文件浏览、语音备忘录无损导出、电池与崩溃诊断，以及配合 [AppleFlow](https://github.com/Kianuni/AppleFlow) 的分流规则一键导出。
 
-> 📜 完整的技术改进说明与版本历史见 [CHANGELOG.md](./CHANGELOG.md)，各版本发布说明见 [Releases](https://github.com/Kianuni/Erosion-CN/releases)。
+### `v1.0.0 – v1.0.3` 核心新特性
+
+- **APFS `clonefile()` 零空间应用换签 / 重装暂存舱（含内置使用说明）**：五重防呆护栏（`embedded.mobileprovision` 24 小时到期预警、10 秒活跃 SQLite WAL 写入锁拦截、只克隆不移动 `clonefile()` + 微信 MD5 账号识别、`manifest.json` 项数校验、`.erosion_pre_restore_bak` 原子回滚 + 跨 Bundle ID 偏好适配 + 暂存舱保留 + 主页常驻防误删横幅）与交互式分步教程 (`APFSVaultGuideSheet`)。
+- **Wi-Fi 局域网 HTTP 文件传输**：基于 `NWListener` + 随机 6 位 PIN Basic Auth（兼容留空或大小写用户名）+ 暗黑 WebUI，支持 64 KB 流式下载/上传、文件夹 `.zip` 打包（2 GB 上限）、重名自动顺延及 Safari / macOS 本地网络排障引导。
+- **开屏广告缓存精准锁死 & 文件管理器深度增强**：专属 `AdCacheBlockerView` 覆盖应用与 `AppGroup` 共享组（含单文件配置预览与 `.erosion_adlock` 防重建 `0555` 占位锁、文件浏览器长按收藏自定义路径及生效边界提醒），配合子目录递归搜索（500 条）、Top 100 最大文件分析、最近访问 15 条目录、剪贴板路径直达与 POSIX `chmod` 权限编辑器。
+- **容器缓存清理提速与选择菜单**：`.userInitiated` + POSIX `fstatat` 极速扫描、拒绝容器去重缓存、实时进度/停止按钮与「全选 / 反选 / 清空已选」菜单。
+- **`iOS 27.3 beta 2+` 漏洞封堵哨兵与 `27.3 beta 1` 提醒**：精确区分 `27.3 beta 1` (`24C503*`) 与 `27.3 beta 2+` (`24C504*`+ / `26.7.3+`)，主页顶部与沙盒报错提供明确引导而不强退应用。
+
+> 📜 完整的技术改进说明与版本历史见 [CHANGELOG.md](./CHANGELOG.md)，各版本发布说明见 [Releases](https://github.com/Kianuni/Erosion-CN/releases)。  
+> 📖 外部独立底层架构解析：[《从 worse_query 逃逸到 MobileGestalt 运行时重构：深入 Erosion-CN 的防白苹果原位写入、双重金库与国行底层解锁架构》](https://lijianfei.com/post/erosion-cn-ios-system-configuration-mobilegestalt-architecture/)
 
 ---
 
@@ -46,7 +67,25 @@
 > [!WARNING]
 > 本项目底层依赖至少一个有效的 `App Group` 容器权限。请使用支持保留或注入 App Group 的个人 Apple ID 自签工具（如 **SideStore / AltStore / Feather / Sideloadly / Impactor / iLoader**）或带 App Group 权限的开发者证书签名安装。
 
-1. 前往 [Releases 页面](https://github.com/Kianuni/Erosion-CN/releases/latest) 下载最新的 `Erosion_v0.9.1_Bilingual.ipa`。
+### 方式一：订阅官方自动更新源（推荐 · 支持一键升级）
+
+在 iPhone / iPad 浏览器中点击下方按钮即可一键添加官方软件源（每次新 Release 发布自动同步，内含 `App Group` 权限声明与 `SHA-256` 校验）：
+
+<p>
+  <a href="https://altdirect.app/?url=https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json&r=sidestore"><img alt="Add to SideStore" src="https://img.shields.io/badge/%E4%B8%80%E9%94%AE%E6%B7%BB%E5%8A%A0%E8%87%B3-SideStore-7C3AED?style=for-the-badge"></a>
+  <a href="https://altdirect.app/?url=https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json&r=altstore"><img alt="Add to AltStore" src="https://img.shields.io/badge/%E4%B8%80%E9%94%AE%E6%B7%BB%E5%8A%A0%E8%87%B3-AltStore-0284C7?style=for-the-badge"></a>
+  <a href="https://altdirect.app/?url=https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json&r=feather"><img alt="Add to Feather" src="https://img.shields.io/badge/%E4%B8%80%E9%94%AE%E6%B7%BB%E5%8A%A0%E8%87%B3-Feather-EC4899?style=for-the-badge"></a>
+  <a href="https://altdirect.app/?url=https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json"><img alt="More Clients" src="https://img.shields.io/badge/%E6%9B%B4%E5%A4%9A%E7%AD%BE%E5%90%8D%E5%B7%A5%E5%85%B7-LiveContainer%20%2F%20%E5%A4%8D%E5%88%B6-475569?style=for-the-badge"></a>
+</p>
+
+手动添加官方源地址（兼容 SideStore / AltStore / Feather / LiveContainer / ESign）：
+```text
+https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json
+```
+
+### 方式二：手动下载 IPA 签名安装
+
+1. 前往 [Releases 页面](https://github.com/Kianuni/Erosion-CN/releases/latest) 下载最新的 `Erosion_v1.0.3_Bilingual.ipa`。
 2. 使用上述签名工具安装至设备；首次运行可在「主页」日志确认已成功识别 `App Group`。
 3. 详细使用说明与原厂状态恢复教程请查阅：
    - 📘 [USAGE_GUIDE.md（安装与使用指南）](./USAGE_GUIDE.md)
@@ -166,21 +205,51 @@ chmod +x ipabuild.sh
 
 ---
 
+## 协同生态 (Ecosystem)
+
+**Erosion-CN**（底层准入）、**[AppleFlow](https://github.com/Kianuni/AppleFlow)**（零 MitM 分流）与 **[AppleLens](https://github.com/Kianuni/AppleLens)**（macOS 观测与 USB 排障）共同组成面向 Apple Intelligence 的完整开源工具链；此外，也欢迎搭配 Kianuni 旗下的其他安全、隐私与个性化开源工具（全部开源透明、无暗桩）：
+
+```text
+  [1. Erosion-CN] 底层准入 ──▶ [2. AppleFlow] 零 MitM 分流 ──▶ [3. AppleLens] macOS 观测 · 探针 · 报告解读
+```
+
+| 项目 | 定位与核心特性 | 适用系统 / 场景 |
+| :--- | :--- | :--- |
+| **[AppleFlow](https://github.com/Kianuni/AppleFlow)** | 零 MitM 的 Apple 智能、PCC 隐私云计算与中文 Siri 极简分流方案，附带 **[在线配置体检与出口探针台](https://kianuni.github.io/AppleFlow/)** | Surge / Loon / Shadowrocket / Stash / Mihomo / QX / Sing-box |
+| **[AppleLens](https://github.com/Kianuni/AppleLens)** | 零 MitM、纯只读的 macOS 原生 Apple 智能三态雷达、USB 真机日志翻译排障、四路分流探针与透明报告解读工作台 | macOS 14.0+ 桌面端 / CLI / USB 连线 iPhone 排障 |
+| **[WQGuard](https://github.com/Kianuni/WQGuard)** | 100% 只读开源的沙盒越权检测、侧载 IPA 安全审查与固件 CVE 防护工具 | iOS / iPadOS 26.2+ – 27.x 侧载排雷与设备自检 |
+| **[Camlo](https://github.com/Kianuni/Camlo)** | **Camlo · 开幕** — 免电脑一键换上滑动解锁变身、裸眼 3D 与动态锁屏壁纸，让 iPhone 锁屏活起来 | iOS / iPadOS 26 – 27 个性化锁屏美化 |
+| **[Enkard](https://github.com/Kianuni/Enkard)** | 纯离线、零云同步、绑定 Apple Secure Enclave 硬件安全芯片的 iPhone 银行级加密卡包 | 个人隐私卡券 / 敏感凭据本地加密收纳 |
+
+---
+
 ## 致谢与开源许可 (Credits & License)
 
 本项目基于 **[GNU General Public License v3.0 (GPLv3)](./LICENSE)** 开源，谨向上游作者与社区研究者致以诚挚感谢：
 
-### 特别致谢（特性借鉴与研究参考）
-- **[huamidev / GestaltX](https://github.com/huamidev/GestaltX)** — 特别感谢 `GestaltX` 项目的优秀工程设计与思路启发，本分支的本机 `libMobileGestalt.dylib` 查询描述符动态偏移解析、变更对比预览（Diff Preview）、写后磁盘读回校验、运行时重签 `App Group` 自动探测以及液态玻璃低功耗渲染键值等改进均借鉴并参考了 `GestaltX` 的设计。
-- **[KirbySD](https://www.v2ex.com/t/1246550)** — 感谢分享 `MobileGestalt` 二进制 `CacheData` 中 `green-tea` / `not-green-tea` 布尔槽位的原始研究思路。
-- **[PoomSmart / MGKeys](https://github.com/PoomSmart/MGKeys)** — 感谢长期维护与整理 `MobileGestalt` 混淆键值映射表。
-- **[kolbicz / WQFiles](https://github.com/kolbicz/WQFiles)** — 感谢分享 LaunchServices `.csstore` (`"bdsl"`) 容器图谱解析研究思路（GPLv3）。
-
-### 上游主项目与漏洞研究致谢
 - **[jailbreakdotparty / Erosion](https://github.com/jailbreakdotparty/Erosion)** & **[lunginspector](https://github.com/lunginspector)** — 上游主仓库与核心架构作者
 - **[forcequitOS](https://github.com/forcequitOS)** & **[0xjohnnydev](https://github.com/0xjohnnydev)** — `worse_query` 沙盒研究作者
 - **[skadz108](https://github.com/skadz108)** & **[rooootdev](https://github.com/rooootdev)** — 后端功能组件维护者
 - **[neonmodder123](https://github.com/neonmodder123)** — 免越狱注销方案作者
+- **[huamidev / GestaltX](https://github.com/huamidev/GestaltX)** — 借鉴并参考了本机 `libMobileGestalt.dylib` 查询描述符动态偏移解析、变更对比预览（Diff Preview）、写后磁盘读回校验、运行时重签 `App Group` 自动探测以及液态玻璃低功耗渲染键值等设计
+- **[KirbySD](https://www.v2ex.com/t/1246550)** — 分享 `MobileGestalt` 二进制 `CacheData` 中 `green-tea` / `not-green-tea` 布尔槽位研究思路
+- **[PoomSmart / MGKeys](https://github.com/PoomSmart/MGKeys)** — 长期维护与整理 `MobileGestalt` 混淆键值映射表
+- **[kolbicz / WQFiles](https://github.com/kolbicz/WQFiles)** — 分享 LaunchServices `.csstore` (`"bdsl"`) 容器图谱解析研究思路（GPLv3）
+- **[yangokok886 / WCMigrate](https://github.com/yangokok886/WCMigrate)** — 分享基于 APFS `clonefile()` 写时复制的应用数据迁移与暂存研究思路（GPLv3）
+
+---
+
+## Star History
+
+<div align="center">
+  <a href="https://star-history.com/#Kianuni/Erosion-CN&Date">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Kianuni/Erosion-CN&type=Date&theme=dark" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Kianuni/Erosion-CN&type=Date" />
+      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Kianuni/Erosion-CN&type=Date" width="680" />
+    </picture>
+  </a>
+</div>
 
 ---
 
